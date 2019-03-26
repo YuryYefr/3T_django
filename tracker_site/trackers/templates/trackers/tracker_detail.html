@@ -1,0 +1,15 @@
+{% extends "trackers/base.html" %}
+{% block content %}
+
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="#">{{ object.user_name }}</a>
+            <small class="text-muted">{{ object.date_created|date:"F d, Y" }}</small>
+        </div>
+        <h2 class="article-title">{{ object.tracker_name }}</h2>
+        <p class="tracker-content">{{ object.content }}</p>
+    </div>
+</article>
+
+{% endblock content %}
