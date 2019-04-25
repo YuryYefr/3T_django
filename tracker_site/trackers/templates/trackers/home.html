@@ -2,13 +2,14 @@
 {% block content %}
     {% for tracker in trackers %}
         <article class="media content-section">
+            <img class="rounded-circle article-img" src="{{ tracker.user_name.profile.image.url }}">
             <div class="media-body">
-                <div class="article-metadata">
+                <div class="tracker-metadata">
                     <a class="mr-2" href="#">{{ tracker.user_name }}</a>
                     <small class="text-muted">{{ tracker.date_created|date:"F d, Y" }}</small>
                 </div>
-                <h2><a class="article-title" href="{% url 'tracker-detail' tracker.id%}">{{ tracker.tracker_name }}</a></h2>
-                <p class="article-content">{{ tracker.content }}</p>
+                <h2><a class="tracker-title" href="{% url 'tracker-detail' tracker.id%}">{{ tracker.tracker_name }}</a></h2>
+                <p class="tracker-content">{{ tracker.content }}</p>
             </div>
         </article>
     {% endfor %}
